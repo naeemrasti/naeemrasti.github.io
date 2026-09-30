@@ -151,6 +151,15 @@ footer{background:#0d1522;color:#7b8598}
 .foot span{display:block;margin-top:2px}
 .foot-right{text-align:right;font-size:11px;color:#5c6579}
 
+
+/* Floating contact buttons */
+.floating-contact{position:fixed;right:22px;bottom:22px;z-index:100;display:flex;flex-direction:column;gap:10px}
+.floating-contact a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s;font-weight:700}
+.floating-contact a:hover{transform:translateY(-3px);box-shadow:0 9px 24px rgba(0,0,0,.3)}
+.floating-contact .whatsapp{background:#25D366}
+.floating-contact .email{background:var(--amber)}
+.floating-contact svg{width:24px;height:24px;fill:currentColor}
+@media(max-width:640px){.floating-contact{right:14px;bottom:14px;gap:8px}.floating-contact a{width:48px;height:48px}}
 @media(max-width:980px){
   .navlinks{display:none}
   .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:4px;padding:14px 20px 20px;background:var(--steel);border-bottom:1px solid rgba(255,255,255,.1)}
@@ -409,5 +418,15 @@ const io = new IntersectionObserver(entries => {
 }, { rootMargin: "-40% 0px -55% 0px" });
 map.forEach((l, s) => io.observe(s));
 </script>
+<!-- Always-visible floating contact buttons -->
+<div class="floating-contact" aria-label="Quick contact">
+  <a class="whatsapp" href="https://wa.me/966558214276" target="_blank" rel="noopener" aria-label="Contact on WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.6 5.92L.14 24l6.39-1.67a11.83 11.83 0 0 0 5.55 1.4h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.16-1.23-6.13-3.4-8.41ZM12.09 21.7h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.82 9.82 0 0 1-1.5-5.2C2.2 6.4 6.63 1.98 12.09 1.98c2.65 0 5.14 1.03 7.01 2.91a9.86 9.86 0 0 1 2.91 7.01c0 5.46-4.44 9.9-9.92 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+  </a>
+  <a class="email" href="mailto:naeemrasti@gmail.com" aria-label="Send email" title="Email">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+  </a>
+</div>
+
 </body>
 </html>
